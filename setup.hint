@@ -1,0 +1,6 @@
+category: System
+requires: libcom_err2 libext2fs2 libgcc1
+sdesc: "Creates ext2 filesystem images"
+ldesc: "e2fsimage allows you to create ext2 filesystem images, mostly 
+used on Linux systems, by copying an entire directory structure into an 
+ext2 formatted image without needing root permissions."
