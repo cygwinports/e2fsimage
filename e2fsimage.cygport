@@ -1,0 +1,17 @@
+NAME="e2fsimage"
+VERSION=0.2.2
+RELEASE=1
+CATEGORY="System"
+SUMMARY="Creates ext2 filesystem images"
+DESCRIPTION="e2fsimage allows you to create ext2 filesystem images, mostly
+used on Linux systems, by copying an entire directory structure into an ext2
+formatted image without needing root permissions."
+HOMEPAGE="http://www.hohnstaedt.de/?page_id=5"
+SRC_URI="mirror://sourceforge/e2fsimage/${NAME}-${VERSION}.tar.gz"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	basedir=${D} prefix=/usr ./configure || error "configure failed"
+	cygmake CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+}
